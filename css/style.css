@@ -23,6 +23,12 @@ font-family: 'Open Sans', sans-serif;
 header a{
     color: white;
     text-decoration: none;
+    transition-duration: 0.4s;
+}
+
+header a:hover{
+    color: white;
+    text-shadow: white 2px 2px 5px;
 }
 
 .headerPrimary{
@@ -55,6 +61,11 @@ header a{
 .utilities svg{
     fill: white;
     height: 40px;
+    transition-duration: 0.4s;
+}
+
+.utilities svg:hover{
+    height: 45px;
 }
 
 .buscador{
@@ -102,6 +113,11 @@ footer{
 footer a{
     color: black;
     text-decoration: none;
+}
+
+footer a:hover{
+    color: black;
+    text-shadow: black 2px 2px 5px;
 }
 
 .footerLegal{
@@ -431,10 +447,11 @@ margin-top: 30px;
     border: 1px solid gray;
     padding: 5px;
     border-radius: 5px;
+    transition-duration: 0.4s;
 }
 
-.grid-container-contacto input:focus{
-    
+.grid-container-contacto input:hover{
+    border: 1.5px solid black;
 }
 
 input[type="checkbox"] + label:before {
@@ -531,6 +548,10 @@ iframe{
         height: 25px;
     }
 
+    .utilities svg:hover{
+        height: 30px;
+    }
+
     .utilities span{
         font-size: 13px;
         font-weight: 500;
@@ -589,6 +610,10 @@ iframe{
     .utilities svg{
         fill: white;
         height: 25px;
+    }
+
+    .utilities svg:hover{
+        height: 30px;
     }
 
     .utilities span{
