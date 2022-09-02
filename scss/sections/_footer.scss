@@ -1,0 +1,95 @@
+.footer {
+    margin-top: 20px;
+    padding-top: 50px;
+    color: black;
+    background: rgba(0, 0, 0, 0.1);
+    a{
+        color: black;
+        text-decoration: none;
+        &:hover {
+            color: black;
+            text-shadow: black 2px 2px 5px; 
+        }
+    }
+    &__superior{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 15px 0 15px;
+        justify-content: space-between; 
+    }
+    &__categoria{
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0 0 35px;
+        }
+        li{
+            display: block;
+            margin-bottom: 20px; 
+        }
+    }
+    &__contacto{
+        ul{
+            list-style: none;
+            padding-left: 0;
+        }
+        li{
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        svg{
+            height: 24px;
+            margin-right: 10px;
+        }
+    }
+    &__redes{
+        a{
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            margin: 0 10px 10px 0;
+            text-align: center;
+            vertical-align: top;
+            border-radius: 50%;
+            background-color: black;
+        }
+        svg{
+            height: 30px;
+            fill: white;
+            display: inline-block;
+            /* margin-top para centrar svg en circulo contenedor */
+            margin-top: 7.5px;
+        }
+    }
+    &__pagos{
+        border-top: 1px rgb(150, 150, 150) solid;
+        padding: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        img{
+            width: 40px;
+        }
+    }
+    &__pagosTitulo{
+        padding-right: 30px;
+        margin-left: -15px;
+    }
+    &__legal{
+        padding: 20px 0;
+        font-size: 14px;
+        background-color: black;
+        color: white;
+        padding-left: 20px;
+        p{
+            margin:0;
+            text-align: center;
+        }
+    }
+    h4{
+        margin-bottom: 25px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+    }
+}

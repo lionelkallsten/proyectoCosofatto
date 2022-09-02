@@ -146,90 +146,78 @@ font-family: 'Open Sans', sans-serif;
         font-size: 13px;
         letter-spacing: 1px; } }
 
-/* FOOTER */
-footer {
+.footer {
   margin-top: 20px;
   padding-top: 50px;
   color: black;
   background: rgba(0, 0, 0, 0.1); }
-
-footer a {
-  color: black;
-  text-decoration: none; }
-
-footer a:hover {
-  color: black;
-  text-shadow: black 2px 2px 5px; }
-
-.footerLegal {
-  padding: 20px 0;
-  font-size: 14px;
-  background-color: black;
-  color: white;
-  padding-left: 20px; }
-
-.footerSup {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 15px 0 15px;
-  justify-content: space-between; }
-
-.h4 {
-  margin-bottom: 25px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: 700; }
-
-.footerCategoria ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 35px; }
-
-.footerCategoria ul li {
-  display: block;
-  margin-bottom: 20px; }
-
-.footerContacto ul {
-  list-style: none; }
-
-.footerContacto li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px; }
-
-.footerContacto svg {
-  height: 24px;
-  margin-right: 10px; }
-
-.footerRedes a {
-  display: inline-block;
-  width: 45px;
-  height: 45px;
-  margin: 0 10px 10px 0;
-  text-align: center;
-  vertical-align: top;
-  border-radius: 50%;
-  background-color: black; }
-
-.footerRedes svg {
-  height: 30px;
-  fill: white;
-  display: inline-block;
-  /* margin-top para centrar svg en circulo contenedor */
-  margin-top: 7.5px; }
-
-.pagos {
-  border-top: 1px #969696 solid;
-  padding: 30px;
-  display: flex;
-  flex-wrap: wrap; }
-
-.pagosTitulo {
-  padding-right: 30px;
-  margin-left: -15px; }
-
-.logosBancos img {
-  width: 40px; }
+  .footer a {
+    color: black;
+    text-decoration: none; }
+    .footer a:hover {
+      color: black;
+      text-shadow: black 2px 2px 5px; }
+  .footer__superior {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 15px 0 15px;
+    justify-content: space-between; }
+  .footer__categoria ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px; }
+  .footer__categoria li {
+    display: block;
+    margin-bottom: 20px; }
+  .footer__contacto ul {
+    list-style: none;
+    padding-left: 0; }
+  .footer__contacto li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; }
+  .footer__contacto svg {
+    height: 24px;
+    margin-right: 10px; }
+  .footer__redes a {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    vertical-align: top;
+    border-radius: 50%;
+    background-color: black; }
+  .footer__redes svg {
+    height: 30px;
+    fill: white;
+    display: inline-block;
+    /* margin-top para centrar svg en circulo contenedor */
+    margin-top: 7.5px; }
+  .footer__pagos {
+    border-top: 1px #969696 solid;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap; }
+    .footer__pagos img {
+      width: 40px; }
+  .footer__pagosTitulo {
+    padding-right: 30px;
+    margin-left: -15px; }
+  .footer__legal {
+    padding: 20px 0;
+    font-size: 14px;
+    background-color: black;
+    color: white;
+    padding-left: 20px; }
+    .footer__legal p {
+      margin: 0;
+      text-align: center; }
+  .footer h4 {
+    margin-bottom: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700; }
 
 /* Pagina PRINCIPAL */
 /* MAIN */
@@ -380,34 +368,6 @@ h2 {
   align-content: center;
   text-align: center; }
 
-/* .textoContacto{
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.textoContacto h1{
-    text-shadow: black 2px 2px 5px;
-} */
-/* .form{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 720px;
-    align-content: center;
-    margin: 0 auto;
-}
-
-.primerContenedor div{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.segundoContenedor{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-} */
 .grid-container-contacto {
   display: grid;
   grid-template-columns: auto;
