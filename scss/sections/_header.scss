@@ -1,0 +1,158 @@
+.header {
+    background-color: rgb(0, 0, 0);
+    /* position: fixed; */
+    top: 0;
+    width: 100%;
+    a{
+        color: white;
+        text-decoration: none;
+        transition-duration: 0.4s;
+        &:hover{
+            color: white;
+            text-shadow: white 2px 2px 5px;
+        }
+    }
+    &__primary{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px rgb(95, 95, 95) solid;
+        img{
+            text-align: left;
+            margin-top: 10PX;
+            @media screen and (max-width: 890px) {
+                text-align: left;
+                margin-top: 10PX;
+                margin-bottom: 10px;
+                max-width: 90%;
+                max-height: 70px;
+            }
+
+        }
+        @media screen and (max-width: 556px) {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+    &__buscador{
+        width: 40%;
+        form{  
+            input{
+                appearance: none;
+                fill: black;
+                font-size: 16px;
+                width: 100%;
+                padding: 6px;
+                font-family: 'Montserrat', sans-serif;
+                color: black;
+                background-color: white;
+                border: 0;
+                border-radius: 10px;
+                transition-duration: 0.3s;
+                &::placeholder{
+                    transition-duration: 0.5s;
+                }
+                &:hover::placeholder{
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: #333;
+                }
+                @media screen and (max-width: 556px) {
+                    appearance: none;
+                    fill: black;
+                    font-size: 16px;
+                    width: 100%;
+                    padding: 6px;
+                    display: block;
+                    font-family: 'Montserrat', sans-serif;
+                    color: black;
+                    background-color: white;
+                    border: 0;
+                    border-radius: 10px;
+                }
+            }
+        }
+        @media screen and (max-width: 890px) {
+            width: 30%;
+        }
+        @media screen and (max-width: 556px) {
+            width: 90%;
+        }
+    }
+    &__utilities{
+        display: flex;
+        flex-direction: row;
+        margin-left: 20px;
+        div{
+            display: flex;
+            flex-direction: column;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            padding: 0 15px;
+        }
+        svg{
+            fill: white;
+            height: 40px;
+            transition-duration: 0.4s;
+            &:hover{
+                height: 45px;
+                @media screen and (max-width: 890px) {
+                    height: 30px;
+                }
+            }
+            @media screen and (max-width: 890px) {
+                fill: white;
+                height: 25px;
+            }
+        }
+        span{
+            @media screen and (max-width: 890px) {
+                font-size: 13px;
+                font-weight: 500;
+                letter-spacing: 1px;
+            }
+        }
+        @media screen and (max-width: 556px) {
+            width: 100%;
+            margin: 10px 0;
+            flex-direction: row;
+            justify-content: space-around
+        }
+    }
+    &__navBar{
+        ul{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            justify-content: center;
+            @media screen and (max-width: 556px) {
+                display: flex;
+                height: 44px;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        li{
+            padding: 10px 10px;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 1px;
+            @media screen and (max-width: 556px) {
+                padding: 5px 5px;
+                font-weight: 500;
+                font-size: 13px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+
