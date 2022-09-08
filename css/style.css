@@ -272,6 +272,39 @@ h2 {
   font-weight: 700;
   margin: 10px 30px; }
 
+.carrousel-item {
+  width: 80%; }
+
+.cards-wrapper {
+  display: flex;
+  width: 80%;
+  margin: 30px auto; }
+
+.card {
+  margin: 0 .5em;
+  width: calc(100%/3); }
+
+.image-wrapper {
+  margin: 0 auto; }
+
+.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%; }
+
+.card-text {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600; }
+
+.card-title {
+  text-align: center;
+  font-size: 16px; }
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -468,8 +501,10 @@ input[type="checkbox"]:checked + label {
   color: #25d366; }
 
 .btn {
+  background-color: black;
   -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s; }
+  transition-duration: 0.4s;
+  --bs-btn-color: white; }
 
 .btn:hover {
   background-color: gray;
