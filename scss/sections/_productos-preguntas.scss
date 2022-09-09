@@ -1,0 +1,21 @@
+//Preguntas Frecuentes
+.main{
+    &__sectionPreguntas{
+        margin: 30px auto;
+    }
+}
+
+//Productos
+.pagProductos .col {
+    margin-top: 20px;
+}
+
+.card {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.08);
+}

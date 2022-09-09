@@ -1,0 +1,23 @@
+.main{
+    &__tituloCentrado{
+        padding-top: 30px;
+        text-align: center;
+    }
+    &__parrafos{
+        @include flex-column-center;
+        flex-wrap: wrap;
+        align-content: center;
+        margin-top: 30px;
+        p{
+            text-align: center;
+            padding: 10px;
+            max-width: 768px;
+        }
+    }
+    &__imgClientes{
+        img{
+            padding-top: 20px;
+            width: 100%;
+        }
+    }
+}

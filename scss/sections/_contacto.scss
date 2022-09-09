@@ -1,0 +1,155 @@
+.centrar {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.grid-container-contacto {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "nombreForm nombreForm"
+        "inputName inputApellido"
+        "edadForm correoForm"
+        "inputDate inputMail"
+        "telefonoForm telefonoForm"
+        "inputTel checkPregunta"
+        "preguntaCheck preguntaCheck"
+        "inputSubmit inputSubmit"
+        "inputReset inputReset"
+        "map map";
+    justify-items: start;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.nombreForm {
+    grid-area: nombreForm;
+}
+
+.inputName {
+    grid-area: inputName;
+}
+
+.inputApellido {
+    grid-area: inputApellido;
+}
+
+.edadForm {
+    grid-area: edadForm;
+}
+
+.correoForm {
+    grid-area: correoForm;
+}
+
+.inputDate {
+    grid-area: inputDate;
+}
+
+.inputMail {
+    grid-area: inputMail;
+}
+
+.telefonoForm {
+    grid-area: telefonoForm;
+}
+
+.inputTel {
+    grid-area: inputTel;
+}
+
+.checkPregunta {
+    grid-area: checkPregunta;
+    @media screen and (max-width: 880px) {
+        padding-left: 10px;
+    }
+}
+
+.preguntaCheck {
+    grid-area: preguntaCheck;
+}
+
+.inputSubmit {
+    grid-area: inputSubmit;
+}
+
+.inputReset {
+    grid-area: inputReset;
+}
+
+.map {
+    grid-area: map;
+}
+
+.grid-container-contacto div {
+    padding-top: 10px;
+}
+
+.grid-container-contacto input {
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+.grid-container-contacto input:hover {
+    border: 1.5px solid black;
+}
+
+input[type="checkbox"]+label:before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    float: left;
+    margin: 0.5em 0.5em 0 0;
+    border: 2px solid #ccc;
+    background: #fff;
+}
+
+input[type="checkbox"]:checked+label:before {
+    border-color: #25d366;
+}
+
+input[type="checkbox"]:checked+label:after {
+    content: "";
+    width: 12px;
+    height: 6px;
+    border: 4px solid #25d366;
+    float: left;
+    margin-left: -1.65em;
+    border-right: 0;
+    border-top: 0;
+    margin-top: 1.05em;
+    transform: rotate(-55deg);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]+label {
+    font-weight: bold;
+    line-height: 3em;
+    color: #ccc;
+}
+
+input[type="checkbox"]:checked+label {
+    color: #25d366;
+}
+
+iframe {
+    width: 800px;
+    height: 800px;
+    @media screen and (max-width: 880px) {
+        width: 400px;
+        height: 400px;
+    }
+    @media screen and (max-width: 512px) {
+        width: 300px;
+        height: 300px;
+    }
+}
+

@@ -1,0 +1,5 @@
+todas las imagenes en la nube
+meta etiqueta description en todas las páginas
+meta etiqueta keywords en todas las páginas
+una etiqueta h1 en cada pagina
+archivo sitemap 

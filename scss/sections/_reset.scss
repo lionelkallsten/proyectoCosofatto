@@ -5,3 +5,9 @@
     text-decoration: none;
     box-sizing: border-box;
 }
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
