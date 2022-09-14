@@ -461,3 +461,14 @@ h2 {
   background-color: gray;
   /* Green */
   color: white; }
+
+.pageActive {
+  font-weight: 650; }
+
+body::-webkit-scrollbar {
+  width: 5px;
+  background: black; }
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, black 0%, rgba(255, 255, 255, 0.6) 50%, black 100%);
+  border-radius: 4px; }

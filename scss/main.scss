@@ -35,3 +35,20 @@ h2 {
     /* Green */
     color: white;
 }
+
+.pageActive {
+    font-weight: 650;
+}
+
+body{
+    &::-webkit-scrollbar{
+        width: 5px;
+        background: black;
+    }
+    &::-webkit-scrollbar-thumb{
+        //background: #969696;
+        //background: linear-gradient(0deg, white, black);
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0.6) 50%, rgba(0,0,0,1) 100%);
+        border-radius: 4px;
+    }
+}
