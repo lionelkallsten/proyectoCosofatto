@@ -1,5 +1,5 @@
 //Productos
-const productos = [
+let productos = [
     {
         id: "1",
         nombre: "Coctelera",
@@ -62,33 +62,33 @@ while(userSelect != "no"){
         let unidades = parseInt(prompt("Cuantas unidades desea llevar"))
         switch(producto){
             case "coctelera":
-                if(productos.stock[0] > 0 && productos.stock[0] > unidades){
-                    precio = productos.precio[0];
-                    productos.stock[0] = productos.stock[0] - 1;
+                if(productos[0].stock  > 0 && productos[0].stock >= unidades){
+                    precio = productos[0].precio;
+                    productos[0].stock = productos[0].stock - unidades;
                 }else{
                     alert("Producto sin stock");
                 }
                 break;
             case "colador":
-                if(productos.stock[1] > 0 && productos.stock[0] > unidades){
-                    precio = productos.precio[1];
-                    productos.stock[1] = productos.stock[1] - 1;
+                if(productos[1].stock > 0 && productos[1].stock >= unidades){
+                    precio = productos[1].precio;
+                    productos[1].stock = productos[1].stock - unidades;
                 }else{
                     alert("Producto sin stock");
                 }
                 break;
             case "jigger":
-                if(productos.stock[2] > 0 && productos.stock[0] > unidades){
-                    precio = productos.precio[2];
-                    productos.stock[2] = productos.stock[2] - 1;
+                if(productos[2].stock > 0 && productos[2].stock >= unidades){
+                    precio = productos[2].precio;
+                    productos[2].stock = productos[2].stock - unidades;
                 }else{
                     alert("Producto sin stock");
                 }
                 break;
             case "vaso julep":
-                if(productos.stock[3] > 0 && productos.stock[0] > unidades){
-                    precio = productos.precio[3];
-                    productos.stock[3] = productos.stock[3] - 1;
+                if(productos[3].stock > 0 && productos[3].stock >= unidades){
+                    precio = productos[3].precio;
+                    productos[3].stock = productos[3].stock - unidades;
                 }else{
                     alert("Producto sin stock");
                 }
@@ -97,7 +97,7 @@ while(userSelect != "no"){
                 break;
         }
         carro.push({producto, unidades, precio});
-        console.log(carro);
+        console.table(carro);
     }else{
         alert ("No comercializamos ese producto");
     }
@@ -107,11 +107,12 @@ while(userSelect != "no"){
     while(userSelect == "no"){
         alert("Gracias por la compra, vuelva pronto");
         carro.forEach((carroFinal) => {
-            console.log(`Producto: ${carroFinal.producto}, Unidades: ${carroFinal.unidades}, Subtotal: $${carroFinal.precio* carroFinal.unidades}`);
+            console.table(`Producto: ${carroFinal.producto}, Unidades: ${carroFinal.unidades}, Subtotal: $${carroFinal.precio* carroFinal.unidades}`);
         });
         break;
     }
 }
+// Mostrar total de carrito
 
 const total = carro.reduce((acc, el) => acc + el.precio * el.unidades * 1.21, 0);
-console.log(`El total a abonar, IVA INCLUIDO, es: $${total}`);
+console.table(`El total a abonar, IVA INCLUIDO, es: $${total}`);
