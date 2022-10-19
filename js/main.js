@@ -1,72 +1,117 @@
-//Producots
+//Productos
+const productos = [
+    {
+        id: "1",
+        nombre: "Coctelera",
+        precio: 8000,
+        stock: 10
+    },
+    {
+        id: "2",
+        nombre: "Colador",
+        precio: 3500,
+        stock: 5 
+    },
+    {
+        id: "3",
+        nombre: "Jigger",
+        precio: 4000,
+        stock: 3 
+    },
+    {
+        id: "4",
+        nombre: "Vaso Julep",
+        precio: 2500,
+        stock: 12 
+    },
+];
+let carro = [];
 
-class Producto{
-    constructor(id, nombre, precio, stock){
-        this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
+//Solicitar compra
+
+let userSelect = prompt("Buenos días, desea realizar una compra? si o no");
+
+//Validar entrada
+
+while(userSelect != "si" && userSelect != "no"){
+    alert("Por favor, ingresar una opción válida");
+    userSelect = prompt("Desea realizar una compra? si o no");
+}
+
+//Condicional
+if (userSelect == "si"){
+    alert("Lista de productos a continuación en consola");
+    console.table(productos);
+    /*
+    let productosTodos = productos.map(
+    (producto) => producto.nombre + " $" + producto.precio
+    );
+    alert (productosTodos.join("   "));
+    */
+}else if(userSelect == "no"){
+    alert("Gracias por pasarte, vuelva pronto!");
+};
+
+//Agregado de productos
+while(userSelect != "no"){
+    let producto = prompt("Agrega un producto a tu carrito");
+    producto = producto.toLowerCase();
+    let precio = 0;
+
+    if(producto == "coctelera" || producto == "colador" || producto == "jigger" || producto == "vaso julep"){
+        let unidades = parseInt(prompt("Cuantas unidades desea llevar"))
+        switch(producto){
+            case "coctelera":
+                if(productos.stock[0] > 0 && productos.stock[0] > unidades){
+                    precio = productos.precio[0];
+                    productos.stock[0] = productos.stock[0] - 1;
+                }else{
+                    alert("Producto sin stock");
+                }
+                break;
+            case "colador":
+                if(productos.stock[1] > 0 && productos.stock[0] > unidades){
+                    precio = productos.precio[1];
+                    productos.stock[1] = productos.stock[1] - 1;
+                }else{
+                    alert("Producto sin stock");
+                }
+                break;
+            case "jigger":
+                if(productos.stock[2] > 0 && productos.stock[0] > unidades){
+                    precio = productos.precio[2];
+                    productos.stock[2] = productos.stock[2] - 1;
+                }else{
+                    alert("Producto sin stock");
+                }
+                break;
+            case "vaso julep":
+                if(productos.stock[3] > 0 && productos.stock[0] > unidades){
+                    precio = productos.precio[3];
+                    productos.stock[3] = productos.stock[3] - 1;
+                }else{
+                    alert("Producto sin stock");
+                }
+                break;
+            default:
+                break;
+        }
+        carro.push({producto, unidades, precio});
+        console.log(carro);
+    }else{
+        alert ("No comercializamos ese producto");
+    }
+
+    userSelect = prompt("Desea seguir comprando?")
+
+    while(userSelect == "no"){
+        alert("Gracias por la compra, vuelva pronto");
+        carro.forEach((carroFinal) => {
+            console.log(`Producto: ${carroFinal.producto}, Unidades: ${carroFinal.unidades}, Subtotal: $${carroFinal.precio* carroFinal.unidades}`);
+        });
+        break;
     }
 }
 
-const producto1 = new Producto(1, "Coctelera", 8000, 10);
-const producto2 = new Producto(2, "Colador", 3500, 5);
-const producto3 = new Producto(3, "jigger", 4000, 3);
-const producto4 = new Producto(4, "Vaso julep", 2500, 12);
-
-console.log("Productos CosoFatto");
-console.log(producto1, producto2, producto3, producto4);
-
-let productoASumar;
-let carrito = 0;
-
-do{
-    productoASumar = parseInt(prompt("Ingrese id de producto a sumar O Ingrese 0 ´cero´ para salir"));
-}while ((productoASumar < 1 || productoASumar > 4) && productoASumar != "0")
-console.log(productoASumar);
-
-while(productoASumar != "0"){
-    switch (productoASumar){
-        case 1:
-            if (producto1.stock>0){
-                carrito = carrito + producto1.precio;
-                producto1.stock = producto1.stock - 1;
-                console.log("Quedan " + producto1.stock + " unidades de " + producto1.nombre);
-            }else{
-                console.log("Producto sin stock");
-            }
-            break;
-        case 2:
-            if (producto2.stock>0){
-                carrito = carrito + producto2.precio;
-                producto2.stock = producto2.stock - 1;
-                console.log("Quedan " + producto2.stock + " unidades de " + producto2.nombre);
-            }else{
-                console.log("Producto sin stock");
-            }
-            break;
-        case 3:
-            if (producto3.stock>0){
-                carrito = carrito + producto3.precio;
-                producto3.stock = producto3.stock - 1;
-                console.log("Quedan " + producto3.stock + " unidades de " + producto3.nombre);
-            }else{
-                console.log("Producto sin stock");
-            }
-            break;
-        case 4:
-            if (producto4.stock>0){
-                carrito = carrito + producto4.precio;
-                producto4.stock = producto4.stock - 1;
-                console.log("Quedan " + producto4.stock + " unidades de " + producto4.nombre);
-            }else{
-                console.log("Producto sin stock");
-            }
-            break;
-    
-    }
-    console.log("El total del carrito es de: $" + carrito);
-    productoASumar = parseInt(prompt("Ingrese id de producto a sumar O Ingrese salir para salir"));
-}
-
-
+const total = carro.reduce((acc, el) => acc + el.precio * el.unidades * 1.21, 0);
+console.log(`El total a abonar, IVA INCLUIDO, es: $${total}`);
