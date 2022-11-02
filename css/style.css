@@ -472,3 +472,6 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background: linear-gradient(0deg, black 0%, rgba(255, 255, 255, 0.6) 50%, black 100%);
   border-radius: 4px; }
+
+main.mainCarrito {
+  min-height: 46vh; }
