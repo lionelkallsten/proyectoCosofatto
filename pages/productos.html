@@ -53,7 +53,7 @@
           </div>
           <div>
             <!-- boton carrito -->
-            <a href="#" id="verCarrito">
+            <a href="#staticBackdrop" id="verCarrito" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               <svg viewbox="0 0 34.5 30.3">
                 <path
                   d="M31 17.6l3-13-.1-.4-.4-.2H6.8L6 .4C5.9.2 5.7 0 5.5 0h-5C.2 0 0 .2 0 .5s.2.5.5.5h4.6L10 23.6l.2.3c-.7.6-1.2 1.6-1.2 2.6 0 1.9 1.6 3.5 3.5 3.5s3.5-1.6 3.5-3.5c0-1-.4-1.9-1.1-2.5H25c-.7.6-1.1 1.5-1.1 2.5 0 1.9 1.6 3.5 3.5 3.5s3.5-1.6 3.5-3.5-1.5-3.5-3.4-3.5H10.9l-1.1-5h20.7c.2 0 .4-.2.5-.4zm-1 8.9c0 1.4-1.1 2.5-2.5 2.5S25 27.9 25 26.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5zm-15 0c0 1.4-1.1 2.5-2.5 2.5S10 27.9 10 26.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5zM9.6 17L7 5h25.9l-2.8 12H9.6z">
@@ -92,6 +92,26 @@
     <h2>PRODUCTOS</h2>
     <div class="container text-center pagProductos">
       <div id="shopContent" class="row"></div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Carrito de Compras</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="alert alert-success" id="carritoContent">
+                  <h5>Carrito</h5>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Vaciar</button>
+          </div>
+      </div>
+      </div>
     </div>
   </main>
   <footer class="footer">

@@ -1,5 +1,6 @@
 let content = document.getElementById("shopContent");
-let verCarrito = document.getElementById("verCarrito");
+let verCarrito = document.getElementById("buttonModal");
+let modalContent = document.getElementById("carritoContent");
 
 let carrito = [];
 
@@ -35,12 +36,25 @@ function agregarAlCarrito(productoAComprar){
     carrito.push(productoAComprar);
     console.table(carrito);
     alert("Producto "+productoAComprar.nombre+" agregado al carro!");
+    modalContent.innerHTML += `
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <div class="image-wrapper">
+                    <img src="${productoAComprar.img}">
+                </div>
+                <div class="card-body" id="comprar">
+                    <h5 class="card-title">${productoAComprar.nombre}</h5>
+                    <p class="card-text">$ ${productoAComprar.precio}</p>
+                    <button id="btn${productoAComprar.id}" class="btn btn-primary">Comprar</button>
+                    <button id="btn${productoAComprar.id}" class="btn btn-primary">Comprar</button>
+                </div>
+            </div>
+        </div>
+    `
 }
 
-verCarrito.addEventListener("click", () => {
-    const modalHeader = document.createElement("div");
-    modalHeader.className = "modal-header";
-    modalHeader.innerHTML = `
-    
-    `
-})
+//mejor diseño de carrito
+//agregar botones de agregar o  quitar unidades
+//agregar boton vaciar carrito
+//local storage
+
