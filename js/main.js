@@ -58,3 +58,5 @@ function agregarAlCarrito(productoAComprar){
 //agregar boton vaciar carrito
 //local storage
 
+//Busco cambiar el diseño del carriito modal, de cartas a tablas.Ademas, agregar los botones de agregar, quitar y eliminar productos. Debo agregar lo visto en la clase de Storage. Mucho muy importante agregar en la tabla los precios totales y parciales. 
+//Estoy tapado de laburo y parciales de la universidad. En la semana lo termino, perdón.
