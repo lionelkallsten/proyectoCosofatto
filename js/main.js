@@ -1,8 +1,14 @@
+let productos=[];
+
+let totalCompra;
+
 let content = document.getElementById("shopContent");
-let verCarrito = document.getElementById("buttonModal");
 let modalContent = document.getElementById("carritoContent");
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+(carrito.length != 0) && renderizarCarritoInicial();
+getJSON();
 
 function renderizarProductos(){
     for(const producto of productos){
@@ -30,7 +36,17 @@ function renderizarProductos(){
     });
 }
 
-renderizarProductos();
+
+//GET PRODUCTOS.JSON
+
+async function getJSON() {
+    const URLJSON = "..//js/productos.json";
+    const resp = await fetch(URLJSON);
+    const data = await resp.json();
+    productos = data;
+    renderizarProductos();
+}
+
 
 function agregarAlCarrito(productoAComprar){
     carrito.push(productoAComprar);
@@ -50,7 +66,34 @@ function agregarAlCarrito(productoAComprar){
                 </div>
             </div>
         </div>
-    `
+    `;
+    totalCompra = carrito.reduce((acm, producto) => acm + producto.precio, 0);
+    let renderTotal = document.getElementById("totalCompra");
+    renderTotal.innerText = "Total a pagar $: " + totalCompra;
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+function renderizarCarritoInicial(){
+    for(const producto of carrito){
+        modalContent.innerHTML += `
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <div class="image-wrapper">
+                    <img src="${producto.img}">
+                </div>
+                <div class="card-body" id="comprar">
+                    <h5 class="card-title">${producto.nombre}</h5>
+                    <p class="card-text">$ ${producto.precio}</p>
+                    <button id="btn${producto.id}" class="btn btn-primary">Comprar</button>
+                    <button id="btn${producto.id}" class="btn btn-primary">Comprar</button>
+                </div>
+            </div>
+        </div>
+    `;
+    }
+    totalCompra = carrito.reduce((acm, producto) => acm + producto.precio, 0);
+    let renderTotal = document.getElementById("totalCompra");
+    renderTotal.innerText = "Total a pagar $: " + totalCompra;
 }
 
 //mejor diseño de carrito
