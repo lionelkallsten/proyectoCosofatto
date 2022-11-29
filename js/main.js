@@ -96,9 +96,17 @@ function renderizarCarritoInicial(){
     renderTotal.innerText = "Total a pagar $: " + totalCompra;
 }
 
-//mejor diseño de carrito
-//agregar botones de agregar o  quitar unidades
+/*
+eliminarProducto()
+vaciarCarrito()
+restarProducto()
+sumarProducto()
+finalizarCompra()
+*/
+
 //agregar boton vaciar carrito
+//mejor diseño de carrito
+//agregar botones de agregar o  quitar unidades (juntar repetidos)
 //local storage
 
 //Busco cambiar el diseño del carriito modal, de cartas a tablas.Ademas, agregar los botones de agregar, quitar y eliminar productos. Debo agregar lo visto en la clase de Storage. Mucho muy importante agregar en la tabla los precios totales y parciales. 
