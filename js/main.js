@@ -118,6 +118,7 @@ eliminarProducto()
 restarProducto()
 sumarProducto()
 finalizarCompra()
+//agregar validacion a formulario
 */
 
 //agregar boton vaciar carrito
