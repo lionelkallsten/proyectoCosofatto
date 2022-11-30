@@ -4,6 +4,9 @@ let totalCompra;
 
 let content = document.getElementById("shopContent");
 let modalContent = document.getElementById("carritoContent");
+let renderTotal = document.getElementById("totalCompra");
+let vaciar = document.getElementById("clearButton");
+let terminar = document.getElementById("finish");
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -50,25 +53,21 @@ async function getJSON() {
 
 function agregarAlCarrito(productoAComprar){
     carrito.push(productoAComprar);
-    console.table(carrito);
-    alert("Producto "+productoAComprar.nombre+" agregado al carro!");
+    //console.table(carrito);
+    //alert("Producto "+productoAComprar.nombre+" agregado al carro!");
     modalContent.innerHTML += `
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <div class="image-wrapper">
-                    <img src="${productoAComprar.img}">
-                </div>
-                <div class="card-body" id="comprar">
-                    <h5 class="card-title">${productoAComprar.nombre}</h5>
-                    <p class="card-text">$ ${productoAComprar.precio}</p>
-                    <button id="btn${productoAComprar.id}" class="btn btn-primary">Comprar</button>
-                    <button id="btn${productoAComprar.id}" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
+        <tr>
+            <th scope="row"><img
+                src="${productoAComprar.img}" alt="prod" style="width: 4.5rem;"></th>
+            <td>${productoAComprar.nombre}</td>
+            <td>$ ${productoAComprar.precio}</td>
+            <td>cantidad</td>
+            <td>calcular</td>
+            <td><button type="button" class="btn btn-outline-danger" style="width: 2.2rem;">-</button><button
+                type="button" class="btn btn-outline-success" style="width: 2.2rem;">+</button></td>
+        </tr>
     `;
     totalCompra = carrito.reduce((acm, producto) => acm + producto.precio, 0);
-    let renderTotal = document.getElementById("totalCompra");
     renderTotal.innerText = "Total a pagar $: " + totalCompra;
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
@@ -76,19 +75,16 @@ function agregarAlCarrito(productoAComprar){
 function renderizarCarritoInicial(){
     for(const producto of carrito){
         modalContent.innerHTML += `
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <div class="image-wrapper">
-                    <img src="${producto.img}">
-                </div>
-                <div class="card-body" id="comprar">
-                    <h5 class="card-title">${producto.nombre}</h5>
-                    <p class="card-text">$ ${producto.precio}</p>
-                    <button id="btn${producto.id}" class="btn btn-primary">Comprar</button>
-                    <button id="btn${producto.id}" class="btn btn-primary">Comprar</button>
-                </div>
-            </div>
-        </div>
+        <tr>
+            <th scope="row"><img
+                src="${producto.img}" alt="prod" style="width: 4.5rem;"></th>
+            <td>${producto.nombre}</td>
+            <td>$ ${producto.precio}</td>
+            <td>cantidad</td>
+            <td>calcular</td>
+            <td><button type="button" class="btn btn-outline-danger" style="width: 2.2rem;">-</button><button
+                type="button" class="btn btn-outline-success" style="width: 2.2rem;">+</button></td>
+        </tr>
     `;
     }
     totalCompra = carrito.reduce((acm, producto) => acm + producto.precio, 0);
@@ -96,9 +92,29 @@ function renderizarCarritoInicial(){
     renderTotal.innerText = "Total a pagar $: " + totalCompra;
 }
 
+//BOTON VACIAR CARRITO
+
+vaciar.onclick = () => {
+    carrito=[];
+    localStorage.removeItem("carrito");
+    modalContent.innerHTML =``;
+    renderTotal.innerHTML = ``;
+};
+
+
+//BOTON FINALIZAR COMPRA
+
+terminar.onclick = () => {
+    if (carrito.length==0){
+        //alerta de carrito vacio
+    }
+    else {
+        //vaciar carrito y agregar toastify
+    };
+}
+
 /*
 eliminarProducto()
-vaciarCarrito()
 restarProducto()
 sumarProducto()
 finalizarCompra()
