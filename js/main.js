@@ -62,6 +62,7 @@ function agregarAlCarrito(productoAComprar) {
     } else {
         carrito.push(productoAComprar);
     }
+    
     modalContent.innerHTML += `
     <tr>
         <th scope="row"><img
